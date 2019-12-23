@@ -16,16 +16,16 @@ public class PlanteroApplication {
         SpringApplication.run(PlanteroApplication.class, args);
     }
 
-    @Autowired
+    //@Autowired
     private SampleDataGenerator sampleDataGenerator;
 
-    @Autowired
+    //@Autowired
     SpeciesRepository speciesRepository;
 
-    @Autowired
+    //@Autowired
     PlantRepository plantRepository;
 
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         sampleDataGenerator.generate();
     }

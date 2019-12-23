@@ -21,23 +21,21 @@ public class LifeTimeTest {
     public void tearDown() throws Exception {
     }
 
-    @Test
+    //@Test
     public void process() {
         LocalDate date = LocalDate.of(2019, 5, 21);
         LocalDate dateMinus = date.minus(38, ChronoUnit.DAYS);
         LocalDate datePlus = date.plus(10, ChronoUnit.DAYS);
         Plant plant = new Plant();
-        plant.setId(SampleDataGenerator.DefinedPlant.ROYAL_GORILLA_ID);
-        plant.setName(SampleDataGenerator.DefinedPlant.ROYAL_GORILLA_NAME);
+//        plant.setId(SampleDataGenerator.DefinedPlant.ROYAL_GORILLA_ID);
+//        plant.setName(SampleDataGenerator.DefinedPlant.ROYAL_GORILLA_NAME);
         List<Event> events = Arrays.asList(
                 new Event(plant, dateMinus, null, PlantState.SEED),
                 new Event(plant, date, PlantState.SEED, PlantState.SEEDLING),
                 new Event(plant, datePlus, PlantState.SEEDLING, PlantState.GROWING)
         );
         LifeTime lifeTime = new LifeTime(plant.getId(), events);
-        lifeTime.timeSpanList().forEach(ts -> {
-            System.out.println(ts.getPlantState() + " " + ts.getDays());
-        });
+        lifeTime.timeSpanList().forEach(ts -> System.out.println(ts.getPlantState() + " " + ts.getDays()));
         //process(events);
     }
 

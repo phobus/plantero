@@ -7,11 +7,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
-@Import({ServiceConfig.class, FacadeConfig.class})
+@Import({ServiceConfig.class, FacadeConfig.class, SampleConfig.class})
 public class AppConfig {
 
-    @Bean
-    public SampleDataGenerator sampleDataGenerator(JdbcTemplate jdbcTemplate) {
-        return new SampleDataGenerator(jdbcTemplate);
-    }
 }

@@ -31,3 +31,6 @@ hs_err_pid*
 *.sln
 *.sw?
 
+/plantero.iml
+/backend/backend.iml
+/backend/target/
